@@ -83,8 +83,7 @@ app.get("/", function (request, response) {
 app.get("/:id", function (request, reponse){
     let record = findById(Instructors , request.params.id);
     if (!record){
-        reponse.status = 404
-        reponse.json({
+        reponse.status(404).json({
             error: {
                 message: "No record found!"
             }
